@@ -1,0 +1,33 @@
+{
+  "name": "kube-monitor",
+  "version": "1.0.0",
+  "description": "Simple desktop app to monitor the pods in kubernetes",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "electron src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davideberdin/kube-monitor.git"
+  },
+  "keywords": [
+    "kubernetes",
+    "monitor",
+    "love"
+  ],
+  "author": "Davide Berdin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davideberdin/kube-monitor/issues"
+  },
+  "homepage": "https://github.com/davideberdin/kube-monitor#readme",
+  "devDependencies": {
+    "electron": "^1.4.15"
+  },
+  "dependencies": {
+    "basic-authorization-header": "^0.2.7",
+    "dotenv": "^4.0.0",
+    "request": "^2.79.0",
+    "request-promise": "^4.1.1"
+  }
+}

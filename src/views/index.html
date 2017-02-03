@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head class="toolbar toolbar-header">
+    <title class="title">Kube Monitor</title>
+    <link rel="stylesheet" href="../assets/css/photon.min.css">
+    <link rel="stylesheet" href="../assets/css/kube.css">
+  </head>
+  <body>
+    <div class="window">
+      <div class="window-content">
+        <div class="pane-group">
+          <!-- Side bar -->
+          <div class="pane-sm sidebar">
+            <ul class="list-group">
+              <li class="list-group-header">
+                <input class="form-control" type="text" placeholder="Search for the pod">
+              </li>
+              <!-- List of pods here -->
+              <div id="pod-list">
+                <li class="list-group-item">
+                </li>
+              </div>
+            </ul>
+          </div>
+          <!-- Main Panel -->
+          <div class="pane">
+            <form>
+              <div class="form-group">
+                <label>Logs</label>
+                <textarea readonly id="pod-log" class="form-control logs" style="min-height: 100%;"></textarea>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="../js/main.js"></script>
+</html>
