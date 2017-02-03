@@ -22,6 +22,8 @@ function createWindow() {
         'title-bar-style': 'hidden'
     });
 
+    mainWindow.maximize(true);
+
     // and load the index.html of the app.
     mainWindow.loadURL(url.format({
         pathname: path.join(__dirname, '/views/index.html'),

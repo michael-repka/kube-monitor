@@ -10,30 +10,25 @@
       <div class="window-content">
         <div class="pane-group">
           <!-- Side bar -->
-          <div class="pane-sm sidebar">
-            <ul class="list-group">
-              <li class="list-group-header">
-                <input class="form-control" type="text" placeholder="Search for the pod">
-              </li>
+          <div class="pane pane-sm sidebar">
+            <ul id="pod-list" class="list-group">
               <!-- List of pods here -->
-              <div id="pod-list">
-                <li class="list-group-item">
-                </li>
-              </div>
             </ul>
           </div>
           <!-- Main Panel -->
           <div class="pane">
             <form>
               <div class="form-group">
-                <label>Logs</label>
-                <textarea readonly id="pod-log" class="form-control logs" style="min-height: 100%;"></textarea>
+                <label class="center">
+                  <strong>Logs</strong>
+                </label>
+                <textarea readonly id="pod-log" class="form-control logs" rows="100"></textarea>
               </div>
             </form>
           </div>
         </div>
       </div>
     </div>
-  </body>
-  <script type="text/javascript" src="../js/main.js"></script>
+</body>
+<script type="text/javascript" src="../js/main.js"></script>
 </html>
