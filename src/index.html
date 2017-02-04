@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head class="toolbar toolbar-header">
+    <title class="title">Kube Monitor</title>
+    <link rel="stylesheet" href="assets/css/kube.css">
+    <link rel="stylesheet" href="assets/css/photon.min.css">
+
+    <script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../node_modules/angular-resource/angular-resource.js"></script>
+    <script type="text/javascript" src="../node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script type="text/javascript" src="../node_modules/angular-route/angular-route.js"></script>
+    
+    <script type="text/javascript" src="monitor/main.js"></script>
+    <script type="text/javascript" src="monitor/utils/constants.js"></script>
+    
+    <script type="text/javascript" src="monitor/controllers/mainController.js"></script>
+    <script type="text/javascript" src="monitor/directives/pod.js"></script>
+    <script type="text/javascript" src="monitor/services/kubeService.js"></script>
+
+    <script type="text/javascript" src="monitor/routes.js"></script>
+  </head>
+  <body ng-app="kubemonitor">
+    <div ui-view></div>
+  </body>
+</html>

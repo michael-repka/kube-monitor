@@ -25,12 +25,15 @@
     "electron": "^1.4.15"
   },
   "dependencies": {
+    "angular": "^1.6.1",
+    "angular-animate": "^1.6.1",
+    "angular-aria": "^1.6.1",
+    "angular-resource": "^1.6.1",
+    "angular-route": "^1.6.1",
+    "angular-ui-router": "^0.4.2",
     "basic-authorization-header": "^0.2.7",
-    "bootstrap": "^3.3.7",
     "dotenv": "^4.0.0",
     "electron-reload": "^1.1.0",
-    "jQuery": "^1.7.4",
-    "jquery": "^1.12.4",
     "request": "^2.79.0",
     "request-promise": "^4.1.1"
   }

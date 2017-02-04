@@ -1,0 +1,31 @@
+<div class="window">
+  <div class="window-content">
+    <div class="pane-group">
+      <!-- Side bar -->
+      <div class="pane pane-sm sidebar">
+        <ul id="pod-list" class="list-group" ng-init="loadPods()">
+          <!-- Pod list -->
+        <pod-header ng-repeat="pod in pods" pod-data="pod"></pod-header>
+      </ul>
+    </div>
+    <!-- Main panel -->
+    <div class="pane">
+      <form class="description">
+        <div id="pod-info">        
+          <dl><label class="pod-label"><strong>Name: </strong>{{podInfo.name}}</label></dl>
+          <dl><label class="pod-label"><strong>Namespace: </strong>{{podInfo.namespace}}</label></dl>
+          <dl><label class="pod-label"><strong>Creation time: </strong>{{podInfo.creationTime}}</label></dl>
+          <dl><label class="pod-label"><strong>Status: </strong>{{podInfo.status}}</label></dl>
+          <dl><label class="pod-label"><strong>Pod IP: </strong>{{podInfo.podIP}}</label></dl>
+          <dl><label class="pod-label"><strong>Restarts: </strong>{{podInfo.restartCount}}</label></dl>
+          <dl><label class="pod-label"><strong>Node Name: </strong>{{podInfo.nodeName}}</label></dl>
+        </div>
+        </form>
+      <div class="form-group">
+        <textarea readonly class="form-control logs" rows="35">
+          {{podInfo.logs}}
+        </textarea>
+      </div>      
+    </div>    
+  </div>
+</div>
