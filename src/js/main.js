@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 var $ = require('jquery');
+var bootstrap = require('bootstrap');
 var exec = require('child_process').exec;
 var rp = require('request-promise');
 var basic = require('basic-authorization-header');
@@ -57,8 +58,22 @@ function getData(url) {
         });
 }
 
+function getPodInfo() {
+    var endpoint = KUBERNETES_POD + '/' + namespace + '/' + pod;
+    var url = getUrl(endpoint);
+    return getData(url)
+        .then(function(data) {
+            if (data == null)
+                return "";
+            return data;
+        })
+        .catch(function(error) {
+            console.log(error);
+        });   
+}
+
 function getLogs() {
-    var endpoint = KUBERNETES_POD + '/' + namespace + '/' + '/' + pod + KUBERNETES_LOG + '?follow=true';
+    var endpoint = KUBERNETES_POD + '/' + namespace + '/' + pod + KUBERNETES_LOG + '?follow=true';
     var url = getUrl(endpoint);
     return getData(url)
         .then(function(data) {
@@ -146,13 +161,25 @@ function getPodList() {
                     textarea = document.getElementById("pod-log");
                     textarea.value = '';
 
-                    setInterval(function(){
-                        var logs = getLogs();
-                        logs.then(function(lines) {
-                            textarea.value = '';
-                            textarea.value = lines;
-                        });
-                    }, 5000);
+                    var info = getPodInfo();
+                    info.then(function(data) {
+                        fillPodInfo(data);
+                    })
+                    .catch(function(error){
+                        console.log(error);
+                    })
+
+                    // Update logs <--- this is called too many times and the apis returns 500
+                    // Need to find a better way to get the stream of logs into the textarea without calling the
+                    // APIs so many times
+
+                    // setInterval(function(){
+                    //     var logs = getLogs();
+                    //     logs.then(function(lines) {
+                    //         textarea.value = '';
+                    //         textarea.value = lines;
+                    //     });
+                    // }, 5000);
                 });
 
                 // Add it to the list:
@@ -165,6 +192,10 @@ function getPodList() {
         .catch(function(error) {
             return null;
         });
+};
+
+function fillPodInfo(data){
+
 };
 
 getPodList();
